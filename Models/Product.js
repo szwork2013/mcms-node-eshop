@@ -23,7 +23,7 @@ module.exports = function (mongoose, modelName) {
         translations : {}
     });
 
-    var autoID = require('mcms-node/lib/Framework/Database/drivers/mongo-auto-increment');
+    var autoID = require('mcms-node-core/lib/Framework/Database/drivers/mongo-auto-increment');
     schema.plugin(autoID, {
         DB : mongoose.connections[0],
         model:'products',
