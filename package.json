@@ -1,12 +1,26 @@
 {
-  "name": "mcmsNodeEshop",
+  "name": "mcms-node-eshop",
   "description": "mcms node eshop module.",
+  "version": "0.0.1",
+  "keywords": [
+    "mcms",
+    "framework",
+    "cms",
+    "eshop"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Michael Bouclas",
+    "email": "mbouclas@gmail.com",
+    "url": "http://www.net-tomorrow.com/"
+  },
   "dependencies": {
     "MD5": "^1.2.1",
     "minimist": "^1.1.0",
     "async": "~0.9.0",
-    "lodash": "^2.4.1",
+    "lodash": "~2.4.1",
     "wrench": "^1.5.8",
-    "rootpath": "^0.1.2"
+    "rootpath": "^0.1.2",
+    "mongoose-materialized": "~0.1.8"
   }
 }
