@@ -1,4 +1,4 @@
-module.exports = (function(App){
+module.exports = (function(App,Package){
     var Auth,
         coreServices,
         eshopModels,
@@ -12,20 +12,22 @@ module.exports = (function(App){
 /*        eshopModels = App.serviceProviders.eshop.models;
         Auth =  App.serviceProviders.core.auth;
         coreServices = App.serviceProviders.core.services;*/
-
+        eshopModels = Package.models;
     }
 
-    product.prototype.getProduct = function(id,callback){
-        var eshop = App.serviceProviders.eshop.models;
+    product.prototype.getProduct = function(args,options,callback){
 
-        eshop.Product.findOne(id)
+
+        var searchBy = (typeof args == 'string') ? {id : args} : args;
+
+        eshopModels.Product.findOne(searchBy)
             .exec(callback);
     };
 
     product.prototype.getProducts = function(options,callback){
-        var eshop = App.serviceProviders.eshop.models;
 
-        eshop.Product.find()
+
+        eshopModels.Product.find()
             .limit(10)
             .sort('-autoID')
             .exec(callback);

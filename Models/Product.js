@@ -2,19 +2,22 @@ module.exports = function (mongoose, modelName) {
     var Schema = mongoose.Schema;
 
     var schema = mongoose.Schema({
-        sku: String,
-        title: String,
-        permalink: String,
+        sku: { type: String, index: true },
+        title: { type: String, index: true },
+        permalink: { type: String, index: true },
         description: String,
         description_long: String,
         created_at: Date,
-        modified_at: Date,
-        uid: Number,
+        updated_at: Date,
+        uid: String,
         active: Boolean,
         categories : [],
         extraFields : {},
         settings: {},
-        eshop: {},
+        eshop: {
+            price : Number,
+            list_price : Number
+        },
         thumb :{},
         mediaFiles : {},
         related :[],
@@ -27,7 +30,10 @@ module.exports = function (mongoose, modelName) {
     schema.plugin(autoID, {
         DB : mongoose.connections[0],
         model:'products',
-        options : { index: true }
+        options : {
+            index: true,
+            autoIdName : 'autoID'
+        }
     });
 
     mongoose.model(modelName, schema);

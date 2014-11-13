@@ -3,13 +3,15 @@ module.exports = function (mongoose, modelName) {
 
     var schema = mongoose.Schema({
         title: String,
-        permalink: String,
+        varName : { type: String, index: true },
+        permalink: { type: String, index: true },
         module: String,
         type: String,
         created_at: Date,
-        modified_at: Date,
+        updated_at: Date,
         settings: {},
         active: Boolean,
+        fieldOptions : [],
         categories : [],
         groups :[]
     });

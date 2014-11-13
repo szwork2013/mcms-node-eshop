@@ -9,7 +9,7 @@ module.exports = (function(App){
         this.App = miniApp;
         this.models = App.Database[App.Config.database.default].loadModels(App.Database[App.Config.database.default].mongoose,
             __dirname + '/Models');
-        this.services = App.loadServices(__dirname + '/Services');
+        this.services = App.loadServices(__dirname + '/Services',null,this);
         this.packageName = 'eshop';
         this.viewDirs =  __dirname + '/views';
     }
