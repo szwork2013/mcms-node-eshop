@@ -1,0 +1,87 @@
+{
+  "name" : "mcms-node-eshop",
+  "package" : "mcms-node-eshop",
+  "baseFolder" : "packages/mcms-node-eshop",
+  "modules" : [
+    "mcms-node-eshop",
+    "mcms-node-products"
+  ],
+  "devFiles" : {
+    "js" : [
+      "js/App/Services/eshopServices.module.js",
+      "js/App/Eshop/mcms-eshop.module.js",
+      "js/App/Services/products.xhr.js",
+      "js/App/Products/mcms-products.module.js",
+      "js/App/Products/products.controller.js",
+      "js/App/Products/product.controller.js",
+      "js/App/Products/categories.controller.js",
+      "js/App/Directives/filterableProductsTable.directive.js",
+      "js/App/Directives/editProduct.directive.js"
+    ],
+    "css" : []
+  },
+  "files" : {
+    "js" : [
+      "js/App/mcms-eshop.js"
+    ],
+    "css" : []
+  },
+  "menus" : [
+    {
+      "title" : "Eshop",
+      "href" : "",
+      "items" : [
+        {
+          "title" : "Home",
+          "href" : "eshop"
+        },
+        {
+          "title" : "Orders",
+          "href" : "eshop/orders"
+        },
+        {
+          "title" : "Discounts",
+          "href" : "eshop/discounts"
+        },
+        {
+          "title" : "Coupons",
+          "href" : "eshop/coupons"
+        },
+        {
+          "title" : "Shipping methods",
+          "href" : "eshop/shiipingMethods"
+        },
+        {
+          "title" : "Payment methods",
+          "href" : "eshop/paymentMethods"
+        }
+      ]
+    },
+    {
+      "title" : "Products",
+      "href" : "",
+      "items" : [
+        {
+          "title" : "Home",
+          "href" : "products"
+        },
+        {
+          "title" : "Categories",
+          "href" : "products/categories"
+        },
+        {
+          "title" : "Dynamic tables",
+          "href" : "products/dynamicTables"
+        },
+        {
+          "title" : "Extra fields",
+          "href" : "products/extraFields"
+        },
+        {
+          "title" : "Product options",
+          "href" : "products/productOptions"
+        }
+      ]
+    }
+  ]
+}

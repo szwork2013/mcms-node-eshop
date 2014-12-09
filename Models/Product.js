@@ -15,7 +15,7 @@ module.exports = function (mongoose, modelName) {
         extraFields : {},
         settings: {},
         eshop: {
-            price : Number,
+            price : { type: Number, index: true },
             list_price : Number
         },
         thumb :{},
@@ -23,8 +23,14 @@ module.exports = function (mongoose, modelName) {
         related :[],
         upselling :[],
         productOptions : {},
-        translations : {}
+        translations : {},
+        ExtraFields : []
+    },{
+        id : true
     });
+
+    schema.set('toObject', { getters: true });
+    schema.set('toJSON', { getters: true });
 
     var autoID = require('mcms-node-core/lib/Framework/Database/drivers/mongo-auto-increment');
     schema.plugin(autoID, {

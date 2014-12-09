@@ -12,6 +12,8 @@ module.exports = function (mongoose, modelName) {
         settings : {}
     });
     schema.plugin(materializedPlugin);
+    schema.set('toObject', { getters: true });
+    schema.set('toJSON', { getters: true });
     // `modelName` in here will be "User"
     mongoose.model(modelName, schema);
 };
